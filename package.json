@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/dltt83/portfolio/issues"
   },
-  "homepage": "https://github.com/dltt83/portfolio#readme"
+  "homepage": "https://github.com/dltt83/portfolio#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "express": "^4.18.1",
+    "node": "^18.5.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "^18.2.0"
+  }
 }
