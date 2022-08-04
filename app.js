@@ -4,12 +4,12 @@ app.use(express.static('client'));
 app.use(express.json());
 
 // method to get list of available locations
-app.get('/locations', function (req, resp) {
+app.get('/projects', function (req, resp) {
     // get keys from data structure
-    const locations = "test of locations url"
-    resp.json(locations);
+    const projects = ["etsAutopilot", "bedBooking"]
+    resp.json(projects);
 
-    // set http czode and end response
+    // set http code and end response
     resp.status(200);
     resp.end();
 });
