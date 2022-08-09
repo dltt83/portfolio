@@ -19,9 +19,16 @@ function renderContent (page, projects) {
         container.innerHTML = "";
 
         for (let thing of projects) {
-            let item = document.createElement('li');
-            item.innerHTML= thing;
-            container.appendChild(item);
+            let div = document.createElement('div');
+
+            let heading = document.createElement('h1');
+            heading.innerHTML = thing;
+
+            div.innerHTML = heading.innerHTML;
+            div.setAttribute("class", "portItem");
+            div.setAttribute("id", thing);
+            
+            container.appendChild(div);
         }
     }
 }
