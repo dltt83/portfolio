@@ -14,5 +14,15 @@ app.get('/projects', function (req, resp) {
     resp.end();
 });
 
+app.get('/media/:imageID', function (req, resp) {
+    let imageID = req.params.imageID;
+
+    // do things
+    resp.sendFile(`media/${imageID}.png`, { root: '.' })
+
+    resp.status(200);
+    resp.end();
+});
+
 // export to app file
 module.exports = app;
