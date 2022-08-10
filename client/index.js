@@ -20,13 +20,15 @@ function renderContent (page, projects) {
 
         for (let thing of projects) {
             let div = document.createElement('div');
+            div.setAttribute("class", "portItem");
+            div.style.backgroundImage="url(./testImage.png)"
+            div.style.backgroundPosition="100% 70%"
+            // div.setAttribute("id", thing);
 
             let heading = document.createElement('h1');
             heading.innerHTML = thing;
 
             div.innerHTML = heading.innerHTML;
-            div.setAttribute("class", "portItem");
-            div.setAttribute("id", thing);
             
             container.appendChild(div);
         }
