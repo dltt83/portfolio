@@ -9,45 +9,112 @@ window.addEventListener('load', async function (event) {
 
 // ===== funcitons for rendering content to DOM =====
 
-// funciton to render main content on DOM
-function renderContent (page, projects) {
-    // redering content for home page
-    if (page === 'Home') {
-        let container = document.getElementById('main_page');
-        container.innerHTML = "";
+// function to render navbar at top of page
+function renderNavbar (projects) {
+    let navbarDiv = document.getElementById("navbar-div");
+    navbarDiv.innerHTML = ""
+    let buttons = ["Josh Lodge Software", "About Me", "Contact Info"];
 
-        for (let currentProject of projects) {
-            // create div and assign class
-            let div = document.createElement('div');
-            div.setAttribute("class", "portItem");
-            
-            // set div background image and position
-            div.style.backgroundImage=`url(media/${currentProject}-cover.png)`
-            div.style.backgroundPosition="100% 70%"
+    for (let currentButton of buttons) {
+        // create new button and give class
+        let newButton = document.createElement("button");
+        newButton.setAttribute("class", "navbar-button");
 
-            // create view button in div and give id and class
-            const viewButton = document.createElement('button');
-            viewButton.innerHTML = currentProject
-            viewButton.setAttribute('id', `${currentProject}-view`);
-            viewButton.setAttribute('class', 'portItem-button')
-            
-            // create function on button press
-            viewButton.addEventListener('click', async function (event) {
+        // give button text and heading if home button
+        if (currentButton === "Josh Lodge Software") {
+            let homeHeading = document.createElement("h1");
+            homeHeading.setAttribute("class", "navbar-heading");
+            homeHeading.innerHTML = currentButton;
+            newButton.appendChild(homeHeading)
+
+            // create function on button press to load main page
+            newButton.addEventListener('click', function (event) {
                 event.preventDefault();
                 
-                renderContent(currentProject, projects);
+                renderContent("Home", projects)
             });
+        } else {
+            newButton.innerHTML = currentButton;
             
-            
-            // append children to div
-            div.appendChild(viewButton);
-            
-            // append div to main content div
-            container.appendChild(div);
+            // create function on button press to load relevant page
+            newButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                
+                console.log(currentButton)
+            });
         }
-    } else if (page === "etsAutopilot") {
-        console.log("ets autopilot page")
-    } else if (page === "bedBooking") {
-        console.log("bed booking page")
+
+
+        navbarDiv.appendChild(newButton)
     }
 }
+
+function renderHome (projects) {
+    // get main contatiner and clear
+    let container = document.getElementById('main_page');
+    container.innerHTML = "";
+    
+    // render button for each project
+    for (let currentProject of projects) {
+        // create div and assign class
+        let div = document.createElement('div');
+        div.setAttribute("class", "portItem");
+        
+        // set div background image and position
+        div.style.backgroundImage=`url(media/${currentProject}-cover.png)`
+        div.style.backgroundPosition="100% 70%"
+
+        // create view button in div and give id and class
+        const viewButton = document.createElement('button');
+        viewButton.innerHTML = currentProject
+        viewButton.setAttribute('id', `${currentProject}-view`);
+        viewButton.setAttribute('class', 'portItem-button')
+        
+        // create function on button press
+        viewButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            
+            renderContent(currentProject, projects);
+        });
+        
+        // append children to div
+        div.appendChild(viewButton);
+    
+        // append div to main content div
+        container.appendChild(div);
+    }
+}
+
+function renderProject (project) {
+    // get main contatiner and clear
+    let container = document.getElementById('main_page');
+    container.innerHTML = "";
+
+    // give page title
+    let title = document.createElement("h1")
+    title.setAttribute("class", "page-title")
+    title.innerHTML = project
+
+    container.appendChild(title)
+}
+
+// funciton to render main content on DOM
+function renderContent (page, projects) {
+    // render navbar
+    renderNavbar(projects);
+    
+    // rendering content for home page
+    if (page === 'Home') {
+        // call function to render home page
+        renderHome(projects);
+
+    } else if (page === "etsAutopilot") {
+        // render page for ets
+        renderProject(page)
+
+    } else if (page === "bedBooking") {
+        // render page for bed booking
+        renderProject(page)
+
+    } // end if
+}; // end function
