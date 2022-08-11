@@ -1,16 +1,16 @@
 // function fro handling page on load
 window.addEventListener('load', async function (event) {
-    let response = await fetch('http://127.0.0.1:8090/projects');
+    let response = await fetch('http://127.0.0.1:8090/siteData');
     let body = await response.json();
 
-    // reder page content for home page
+    // render page content for home page
     renderContent('Home', body);
 });
 
 // ===== funcitons for rendering content to DOM =====
 
 // function to render navbar at top of page
-function renderNavbar (projects) {
+function renderNavbar (SITE_DATA) {
     let navbarDiv = document.getElementById("navbar-div");
     navbarDiv.innerHTML = ""
     let buttons = ["Josh Lodge Software", "About Me", "Contact Info"];
@@ -31,7 +31,7 @@ function renderNavbar (projects) {
             newButton.addEventListener('click', function (event) {
                 event.preventDefault();
                 
-                renderContent("Home", projects)
+                renderContent("Home", SITE_DATA)
             });
         } else {
             newButton.innerHTML = currentButton;
@@ -49,10 +49,12 @@ function renderNavbar (projects) {
     }
 }
 
-function renderHome (projects) {
+function renderHome (SITE_DATA) {
     // get main contatiner and clear
     let container = document.getElementById('main_page');
     container.innerHTML = "";
+
+    const projects = SITE_DATA.projects
     
     // render button for each project
     for (let currentProject of projects) {
@@ -61,20 +63,20 @@ function renderHome (projects) {
         div.setAttribute("class", "portItem");
         
         // set div background image and position
-        div.style.backgroundImage=`url(media/${currentProject}-cover.png)`
+        div.style.backgroundImage=`url(media/${currentProject.coverImage})`
         div.style.backgroundPosition="100% 70%"
 
         // create view button in div and give id and class
         const viewButton = document.createElement('button');
-        viewButton.innerHTML = currentProject
-        viewButton.setAttribute('id', `${currentProject}-view`);
+        viewButton.innerHTML = currentProject.prettyName
+        viewButton.setAttribute('id', `${currentProject.id}-view`);
         viewButton.setAttribute('class', 'portItem-button')
         
         // create function on button press
         viewButton.addEventListener('click', function (event) {
             event.preventDefault();
             
-            renderContent(currentProject, projects);
+            renderContent(currentProject.id, SITE_DATA);
         });
         
         // append children to div
@@ -93,28 +95,48 @@ function renderProject (project) {
     // give page title
     let title = document.createElement("h1")
     title.setAttribute("class", "page-title")
-    title.innerHTML = project
-
+    title.innerHTML = project.prettyName
     container.appendChild(title)
+
+    // loop through paragraphs from json and add to page
+    for (let paragraph of project.waffle) {
+        let newPara = document.createElement("p")
+        newPara.innerHTML = paragraph
+        container.append(newPara)
+    }
+
+    // loop through images in json and add to page
+    for (let imageName of project.otherImages) {
+        let newImage = document.createElement("img")
+        newImage.setAttribute("src", `./media/${imageName}`)
+        newImage.setAttribute("class", "project-image")
+        container.append(newImage)
+    }
+
 }
 
 // funciton to render main content on DOM
-function renderContent (page, projects) {
+function renderContent (page, SITE_DATA) {
     // render navbar
-    renderNavbar(projects);
+    renderNavbar(SITE_DATA);
     
     // rendering content for home page
     if (page === 'Home') {
         // call function to render home page
-        renderHome(projects);
+        renderHome(SITE_DATA);
 
-    } else if (page === "etsAutopilot") {
-        // render page for ets
-        renderProject(page)
-
-    } else if (page === "bedBooking") {
-        // render page for bed booking
-        renderProject(page)
+    } else {
+        // call function to render page with corrent content
+        // renderProject(SITE_DATA.projects[id=page]);      <- should work, dont know why it doesnt
+        
+        // loop through projects to find one with correct ID
+        for (let currentProject of SITE_DATA.projects) {
+            if (currentProject.id == page) {
+                renderProject(currentProject);
+                
+                break;
+            }
+        }
 
     } // end if
 }; // end function
