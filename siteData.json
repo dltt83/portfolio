@@ -1,0 +1,49 @@
+{
+    "projects": [
+        {
+            "id": "etsAutopilot",
+            "prettyName": "ETS Autopilot",
+            "coverImage": "etsAutopilot-cover.png",
+            "waffle": ["waffle para 1", "waffle para 2", "the fitnessgram pacer test is a multi-stage aerobic capacity test which gradually gets harder as it progresses"],
+            "otherImages": ["etsAutopilot-cover.png", "bedBooking-cover.png"],
+            "github": "https://github.com/dltt83/etsAutopilot"
+        },
+        {
+            "id": "bedBooking",
+            "prettyName": "Bed Booking System",
+            "coverImage": "bedBooking-cover.png",
+            "waffle": ["waffle para 1 for beds", "waffle para 2 bedBooking", "the fitnessgram pacer test is a multi-stage aerobic capacity test which gradually gets harder as it progresses"],
+            "otherImages": ["bedBooking-cover.png", "etsAutopilot-cover.png", "etsAutopilot-cover.png", "bedBooking-cover.png", "bedBooking-cover.png", "etsAutopilot-cover.png"],
+            "github": "https://github.com/dltt83"
+        }
+    ],
+    "aboutPage":
+    {
+        "waffleAboutMe": ["im very good yes please make me do your software", "other stuff", "more"],
+        "pictures": []
+    },
+    "linksPage":
+    {
+        "email": "josh.lodge07@gmail.com",
+        "linkedin": "",
+        "gtihub": "https://github.com/dltt83"
+    },
+    "Phone": [
+        {
+          "type": "home",
+          "number": "0203 544 1234"
+        },
+        {
+          "type": "office",
+          "number": "01962 001234"
+        },
+        {
+          "type": "office",
+          "number": "01962 001235"
+        },
+        {
+          "type": "mobile",
+          "number": "077 7700 1234"
+        }
+    ]
+}
