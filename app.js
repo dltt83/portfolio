@@ -3,26 +3,14 @@ const app = express();
 app.use(express.static('client'));
 app.use(express.json());
 
-// method to get list of available locations
-app.get('/projects', function (req, resp) {
-    // get keys from data structure
-    const projects = ["etsAutopilot", "bedBooking"]
-    resp.json(projects);
+const data = require("./siteData.json");
 
-    // set http code and end response
+app.get('/siteData', function (req, resp) {
+    resp.json(data);
+    
     resp.status(200);
     resp.end();
-});
-
-app.get('/media/:imageID', function (req, resp) {
-    let imageID = req.params.imageID;
-
-    // do things
-    resp.sendFile(`media/${imageID}.png`, { root: '.' })
-
-    resp.status(200);
-    resp.end();
-});
+})
 
 // export to app file
 module.exports = app;
