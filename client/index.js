@@ -102,17 +102,22 @@ function renderProject (project) {
     for (let paragraph of project.waffle) {
         let newPara = document.createElement("p")
         newPara.innerHTML = paragraph
-        container.append(newPara)
+        container.appendChild(newPara)
     }
+
+    let githubLink = document.createElement("a")
+    githubLink.setAttribute("href", project.github)
+    githubLink.setAttribute("class", "gitLink")
+    githubLink.innerHTML = "Github Repository"
+    container.appendChild(githubLink)
 
     // loop through images in json and add to page
     for (let imageName of project.otherImages) {
         let newImage = document.createElement("img")
         newImage.setAttribute("src", `./media/${imageName}`)
         newImage.setAttribute("class", "project-image")
-        container.append(newImage)
+        container.appendChild(newImage)
     }
-
 }
 
 // funciton to render main content on DOM
