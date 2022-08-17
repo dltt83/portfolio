@@ -1,49 +1,57 @@
 {
-    "projects": [
-        {
-            "id": "etsAutopilot",
-            "prettyName": "ETS Autopilot",
-            "coverImage": "etsAutopilot-cover.png",
-            "waffle": ["waffle para 1", "waffle para 2", "the fitnessgram pacer test is a multi-stage aerobic capacity test which gradually gets harder as it progresses"],
-            "otherImages": ["etsAutopilot-cover.png", "bedBooking-cover.png"],
-            "github": "https://github.com/dltt83/etsAutopilot"
-        },
-        {
-            "id": "bedBooking",
-            "prettyName": "Bed Booking System",
-            "coverImage": "bedBooking-cover.png",
-            "waffle": ["waffle para 1 for beds", "waffle para 2 bedBooking", "the fitnessgram pacer test is a multi-stage aerobic capacity test which gradually gets harder as it progresses"],
-            "otherImages": ["bedBooking-cover.png", "etsAutopilot-cover.png", "etsAutopilot-cover.png", "bedBooking-cover.png", "bedBooking-cover.png", "etsAutopilot-cover.png"],
-            "github": "https://github.com/dltt83"
-        }
-    ],
-    "aboutPage":
+  "projects": [
     {
-        "waffleAboutMe": ["im very good yes please make me do your software", "other stuff", "more"],
-        "pictures": []
+      "id": "binary-search-tree",
+      "prettyName": "Binary Search Tree",
+      "coverImage": "bst-2.png",
+      "waffle": ["This project consists of an object oriented implementation of a binary search tree in Java. JavaFX was also used for the GUI portion of the project.", 
+        "The program consists of 3 classes, the Node class holds the data and methods for each single node in the tree. Each node has the numerical data, and pointers to its parent node, the node below on the left, and the node below on the right.", 
+        "Each node also has a number of methods for accessing and modifying its data in wider programs.", 
+        "The tree class holds the data for the full tree structure. The only link the tree has to the nodes is through the link to the root node. The rest of the data must be accessed by traversing the tree as it should. There are also many methods associated with the tree, such as adding and removing nodes, making rotations, searching for data, and balancing the tree. There is also a text-based UI available in the tree class however it is harder to follow without the visual representation", 
+        "This is why the GUI class was then built, this uses the Node and TYree classes with the JavaFX library to create a window to view a visual representation of the tree as well as manipulate in all of the ways available in the text based version.", 
+        "This project has been very valuable to me to learn more of Java programming and larger scale object-oriented programming with multiple linked classes",
+        "The pairs of images below show examples of trees before and after operations, the first pair shows a tree before and after the numbers 1, 3, 5, 7, 9, 11, 13, 15 are added and the last 2 pairs show unbalanced trees after the in built automatic balance function"],
+      "otherImages": ["bst-1.png", "bst-2.png", "bst-3.png", "bst-4.png", "bst-5.png", "bst-6.png"],
+      "github": "https://github.com/dltt83/binary-search-tree"
     },
-    "linksPage":
     {
-        "email": "josh.lodge07@gmail.com",
-        "linkedin": "",
-        "gtihub": "https://github.com/dltt83"
+      "id": "etsAutopilot",
+      "prettyName": "Euro Truck Simulator 2 Autopilot",
+      "coverImage": "etsAutopilot-2.png",
+      "waffle": ["",
+        "The program uses image processing to attempt to find the lines on the road to determine which way the truck should steer.",
+        "I use the PyAutoGUI library to take screenshots of certain parts of the game window, and OpenCV for the processing and line detection",
+        "I also use PyGame to show the user a small window with what the program can detect, this is also useful for me in the development of the project",
+        "The program has keybinds to toggle the program on and off, which acts as a kill switch if there is a long string of bad inputs",
+        "This project is in a partially complete state, the program can detect lines on the road and can see the current steering angle by analysing the view of the wheel, however there is a significant amount of noise, as well as false positives in the line detection meaning that is it not good enough to reliably control the truck", 
+        "In the future, I aim to use a machine learning model to have the program learn from a human driving what steering angle is necessary for the detected turn in the road",
+        "Work on this project is ongoing as I find it particularly interesting and I hope to get it to a working state in the near future.",
+        "The images below show an instance of the game, with the software running, the small window on the right is the pygame window previously mentioned, with the input displayed. The lines on the window are the lines that are being detected by the program, the blue bar is the estimated direction of the road, or the recommended input, and the red bar is the current detected input from the wheel."],
+      "otherImages": ["etsAutopilot-1.png", "etsAutopilot-2.png", "etsAutopilot-3.png"],
+      "github": "https://github.com/dltt83/etsAutopilot"
     },
-    "Phone": [
-        {
-          "type": "home",
-          "number": "0203 544 1234"
-        },
-        {
-          "type": "office",
-          "number": "01962 001234"
-        },
-        {
-          "type": "office",
-          "number": "01962 001235"
-        },
-        {
-          "type": "mobile",
-          "number": "077 7700 1234"
-        }
-    ]
+    {
+      "id": "portfolio",
+      "prettyName": "This Website",
+      "coverImage": "",
+      "waffle": ["For this portfolio website, I decided to create my own progressive web app to show off my projects.", 
+        "The site uses an express app for the JS backend, servicing requests from the client to get data for the site.", 
+        "The site is relatively basic but is made to use all of the technologies to support a bigger project, as well as having all of the features of a modern website such as fast loading times and easily resizable components to be viewed easily on any viewport."],
+      "otherImages": [],
+      "github": "https://github.com/dltt83/portfolio"
+    }
+  ],
+  "aboutPage":
+  {
+      "waffleAboutMe": ["im very good yes please make me do your software", "other stuff", "more"],
+      "pictures": [],
+      "cv": "linkToCV.pdf"
+  },
+  "linksPage":
+  {
+      "email": "josh.lodge07@gmail.com",
+      "linkedin": "",
+      "github": "https://github.com/dltt83",
+      "cv": "linkToCV.pdf"
+  }
 }
