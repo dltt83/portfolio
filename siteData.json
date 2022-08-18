@@ -10,8 +10,9 @@
         "The tree class holds the data for the full tree structure. The only link the tree has to the nodes is through the link to the root node. The rest of the data must be accessed by traversing the tree as it should. There are also many methods associated with the tree, such as adding and removing nodes, making rotations, searching for data, and balancing the tree. There is also a text-based UI available in the tree class however it is harder to follow without the visual representation", 
         "This is why the GUI class was then built, this uses the Node and TYree classes with the JavaFX library to create a window to view a visual representation of the tree as well as manipulate in all of the ways available in the text based version.", 
         "This project has been very valuable to me to learn more of Java programming and larger scale object-oriented programming with multiple linked classes",
-        "The pairs of images below show examples of trees before and after operations, the first pair shows a tree before and after the numbers 1, 3, 5, 7, 9, 11, 13, 15 are added and the last 2 pairs show unbalanced trees after the in built automatic balance function"],
+        "The pairs of images below show examples of trees before and after various operations:"],
       "otherImages": ["bst-1.png", "bst-2.png", "bst-3.png", "bst-4.png", "bst-5.png", "bst-6.png"],
+      "captions" : ["", "Before and after the numbers 1, 3, 5, 7, 9, 11, 13, 15 are added", "", "Before and after automatic balancing", "", "Before and after automatic balancing"],
       "github": "https://github.com/dltt83/binary-search-tree"
     },
     {
@@ -28,30 +29,53 @@
         "Work on this project is ongoing as I find it particularly interesting and I hope to get it to a working state in the near future.",
         "The images below show an instance of the game, with the software running, the small window on the right is the pygame window previously mentioned, with the input displayed. The lines on the window are the lines that are being detected by the program, the blue bar is the estimated direction of the road, or the recommended input, and the red bar is the current detected input from the wheel."],
       "otherImages": ["etsAutopilot-1.png", "etsAutopilot-2.png", "etsAutopilot-3.png"],
+      "captions" : ["", "", "Screenshots of the game running with the software"],
       "github": "https://github.com/dltt83/etsAutopilot"
+    },
+    {
+      "id": "blender",
+      "prettyName": "3D Modelling",
+      "coverImage": "donut.png",
+      "waffle": ["In the summer of 2020, through lockdown, I decided to teach myself a new skill in 3D modelling using blender.", 
+        "I started small, creating the usual Donut, and moved on to modelling various things around my room as accurately as I could.", 
+        "As it was going well and I found it very enjoyable and rewarding, I moved on to make a 3D model of a cutaway version of my room, with everything in it.",
+        "This was inspired by the Razer 'Chroma Lair' marketing.",
+        "This project took a long time but went well and I now have several good renders of many combined projects in this room render.",
+        "The images below show some of the rendered finished products."],
+      "otherImages": ["donut.png", "guitar.png", "laptop.png", "light room.png", "dark room.png"],
+      "captions" : ["First Donut", "Model of my guitar", "My Laptop", "My room V1", "My room V2"],
+      "github": ""
     },
     {
       "id": "portfolio",
       "prettyName": "This Website",
-      "coverImage": "",
+      "coverImage": "youAreHere.png",
       "waffle": ["For this portfolio website, I decided to create my own progressive web app to show off my projects.", 
-        "The site uses an express app for the JS backend, servicing requests from the client to get data for the site.", 
+        "The site uses node.js and an express app for the JS backend, servicing requests from the client to get data for the site.", 
         "The site is relatively basic but is made to use all of the technologies to support a bigger project, as well as having all of the features of a modern website such as fast loading times and easily resizable components to be viewed easily on any viewport."],
       "otherImages": [],
+      "captions": [],
       "github": "https://github.com/dltt83/portfolio"
     }
   ],
-  "aboutPage":
+  "about":
   {
-      "waffleAboutMe": ["im very good yes please make me do your software", "other stuff", "more"],
-      "pictures": [],
-      "cv": "linkToCV.pdf"
+      "waffle": ["I am a hardworking and enthusiastic student at Durham University, studying my third year of Computer Science (BSc).", 
+        "I have experience in many programming languages, such as Python, Java, C/C++, and C#. I also have experience in full stack web development and 3D modelling in blender", 
+        "I am adaptable in my work and I have good mathematical and problem solving skills which i can apply to different situations as I enjoy the challenge of learning and working on new skills.",
+        "I achieved excellent A-level grades (A*A*A) in maths, computer science and physics as well as a wide range of GCSEs between grades 6-8",
+        "I also have a personal interest in physics and I enjoy astronomy which is why I took an elective physics module in my first year of university",
+        "In my spare time I enjoy playing and listening to music, having played guitar and bass guitar for 8 years, and having a great interest in rock/metal as well as jazz and prog rock.",
+        "I also enjoy the outdoors, especially in the mountains with biking and climbing in the summer as well as skiing in the winter",
+        "At Durham I have also enjoyed being competitive in sports, being a part of the college rowing team",
+        "I am also competitive when it comes to gaming, having taken part in several sim-racing events and championships such as the BUSR Spring and Summer series."],
+      "pictures": []
   },
-  "linksPage":
+  "links":
   {
       "email": "josh.lodge07@gmail.com",
-      "linkedin": "",
+      "linkedIn": "https://www.linkedin.com/in/joshua-lodge-1290601ba/",
       "github": "https://github.com/dltt83",
-      "cv": "linkToCV.pdf"
+      "cv": "media/CV_JoshuaLodge.pdf"
   }
 }
