@@ -1,11 +1,19 @@
 // function fro handling page on load
 window.addEventListener('load', async function (event) {
     let response = await fetch('http://127.0.0.1:8090/siteData');
-    let body = await response.json();
+    globalThis.SITE_DATA = await response.json();
 
     // render page content for home page
-    renderContent('Home', body);
+    renderContent('Home', SITE_DATA);
 });
+
+window.addEventListener('popstate', function(event) {
+});
+
+onpopstate = (event) => {
+    console.log("back button pressed");
+    renderContent('Home', SITE_DATA);
+};
 
 // ===== funcitons for rendering content to DOM =====
 
@@ -57,7 +65,6 @@ function renderHome (SITE_DATA) {
         
         // set div background image and position
         div.style.backgroundImage=`url(media/${currentProject.coverImage})`
-        div.style.backgroundPosition="100% 70%"
 
         // create view button in div and give id and class
         const viewButton = document.createElement('button');
