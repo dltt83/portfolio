@@ -19,7 +19,7 @@
       "id": "etsAutopilot",
       "prettyName": "Euro Truck Simulator 2 Autopilot",
       "coverImage": "etsAutopilot-2.png",
-      "waffle": ["",
+      "waffle": ["For this project, I am trying to create an autopilot system for the game Euro Truck Simulator.",
         "The program uses image processing to attempt to find the lines on the road to determine which way the truck should steer.",
         "I use the PyAutoGUI library to take screenshots of certain parts of the game window, and OpenCV for the processing and line detection",
         "I also use PyGame to show the user a small window with what the program can detect, this is also useful for me in the development of the project",
