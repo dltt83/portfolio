@@ -2,6 +2,9 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Personal Portfolio",
+  "engines": {
+    "node": "14.15.0"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo No test script found.",
