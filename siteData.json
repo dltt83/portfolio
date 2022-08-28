@@ -49,7 +49,7 @@
     {
       "id": "portfolio",
       "prettyName": "This Website",
-      "coverImage": "youAreHere.png",
+      "coverImage": "",
       "waffle": ["For this portfolio website, I decided to create my own progressive web app to show off my projects.", 
         "The site uses node.js and an express app for the JS backend, servicing requests from the client to get data for the site.", 
         "The site is relatively basic but is made to use all of the technologies to support a bigger project, as well as having all of the features of a modern website such as fast loading times and easily resizable components to be viewed easily on any viewport."],
