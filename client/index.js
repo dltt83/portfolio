@@ -65,7 +65,9 @@ function renderHome (SITE_DATA) {
         div.setAttribute("class", "portItem");
         
         // set div background image and position
-        div.style.backgroundImage=`url(media/${currentProject.coverImage})`
+        if (currentProject.coverImage != "") {
+            div.style.backgroundImage=`url(media/${currentProject.coverImage})`;
+        }
 
         // create view button in div and give id and class
         const viewButton = document.createElement('button');
