@@ -1,6 +1,7 @@
 // function fro handling page on load
 window.addEventListener('load', async function (event) {
-    let response = await fetch('http://127.0.0.1:8090/siteData');
+    const url = "mysterious-chamber-62012.herokuapp.com"
+    let response = await fetch(`http://${url}/siteData`);
     globalThis.SITE_DATA = await response.json();
 
     // render page content for home page
