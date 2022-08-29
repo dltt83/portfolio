@@ -137,17 +137,19 @@ function renderProject (project) {
         }
     }
 
-    // create new button to go to home page
-    let homeButton2 = document.createElement("button");
-    homeButton2.setAttribute("class", "home-button");
-    homeButton2.innerHTML = "Home Page";
-    // create function on button press to load main page
-    homeButton2.addEventListener('click', function (event) {
-        event.preventDefault();
-        
-        renderHome(SITE_DATA);
-    });
-    container.appendChild(homeButton2);
+    if (project.otherImages != []) {
+        // create new button to go to home page
+        let homeButton2 = document.createElement("button");
+        homeButton2.setAttribute("class", "home-button");
+        homeButton2.innerHTML = "Home Page";
+        // create function on button press to load main page
+        homeButton2.addEventListener('click', function (event) {
+            event.preventDefault();
+            
+            renderHome(SITE_DATA);
+        });
+        container.appendChild(homeButton2);
+    };
 }
 
 function renderAbout (SITE_DATA) {
