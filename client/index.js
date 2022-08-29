@@ -137,7 +137,7 @@ function renderProject (project) {
         }
     }
 
-    if (project.otherImages != []) {
+    if (project.otherImages.length > 0) {
         // create new button to go to home page
         let homeButton2 = document.createElement("button");
         homeButton2.setAttribute("class", "home-button");
