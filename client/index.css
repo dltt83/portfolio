@@ -68,6 +68,15 @@ p {
     height: 100%;
 }
 
+.home-button {
+    border:rgba(0, 0, 0, 0);
+    color: #000;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.7em;}
+
 .page-title {
     text-align: center;
 }

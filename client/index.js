@@ -110,15 +110,17 @@ function renderProject (project) {
         container.appendChild(githubLink)
     }
 
-    let homeLink1 = document.createElement("a")
-    homeLink1.setAttribute("class", "link")
-    homeLink1.innerHTML = "Home"
-    homeLink1.addEventListener('click', function (event) {
+    // create new button to go to home page
+    let homeButton1 = document.createElement("button");
+    homeButton1.setAttribute("class", "home-button");
+    homeButton1.innerHTML = "Home Page";
+    // create function on button press to load main page
+    homeButton1.addEventListener('click', function (event) {
         event.preventDefault();
         
         renderHome(SITE_DATA);
     });
-    container.appendChild(homeLink1)
+    container.appendChild(homeButton1);
 
     // loop through images in json and add to page
     for (let imageName of project.otherImages) {
@@ -135,15 +137,17 @@ function renderProject (project) {
         }
     }
 
-    let homeLink2 = document.createElement("a")
-    homeLink2.setAttribute("class", "link")
-    homeLink2.innerHTML = "Home"
-    homeLink2.addEventListener('click', function (event) {
+    // create new button to go to home page
+    let homeButton2 = document.createElement("button");
+    homeButton2.setAttribute("class", "home-button");
+    homeButton2.innerHTML = "Home Page";
+    // create function on button press to load main page
+    homeButton2.addEventListener('click', function (event) {
         event.preventDefault();
         
         renderHome(SITE_DATA);
     });
-    container.appendChild(homeLink2)
+    container.appendChild(homeButton2);
 }
 
 function renderAbout (SITE_DATA) {
@@ -177,6 +181,18 @@ function renderAbout (SITE_DATA) {
         newImage.setAttribute("class", "about-image")
         container.appendChild(newImage)
     }
+
+    // create new button to go to home page
+    let homeButton1 = document.createElement("button");
+    homeButton1.setAttribute("class", "home-button");
+    homeButton1.innerHTML = "Home Page";
+    // create function on button press to load main page
+    homeButton1.addEventListener('click', function (event) {
+        event.preventDefault();
+        
+        renderHome(SITE_DATA);
+    });
+    container.appendChild(homeButton1);
 }
 
 function renderContact (SITE_DATA) {
@@ -212,7 +228,19 @@ function renderContact (SITE_DATA) {
     cvButton.setAttribute("href", SITE_DATA.links.cv)
     cvButton.setAttribute("class", "link")
     cvButton.innerHTML = "Personal CV"
-    container.appendChild(cvButton) 
+    container.appendChild(cvButton);
+
+    // create new button to go to home page
+    let homeButton1 = document.createElement("button");
+    homeButton1.setAttribute("class", "home-button");
+    homeButton1.innerHTML = "Home Page";
+    // create function on button press to load main page
+    homeButton1.addEventListener('click', function (event) {
+        event.preventDefault();
+        
+        renderHome(SITE_DATA);
+    });
+    container.appendChild(homeButton1);
 }
 
 // funciton to render main content on DOM
