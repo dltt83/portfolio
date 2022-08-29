@@ -10,24 +10,6 @@ window.addEventListener('load', async function (event) {
     renderContent('Home', SITE_DATA);
 });
 
-function HandleBackFunctionality() {  
-    if(window.event) {  
-        if(window.event.clientX < 40 && window.event.clientY < 0) {  
-            alert("Browser back button is clicked...");  
-        } else {  
-            alert("Browser refresh button is clicked...");  
-        }  
-    } else {  
-        if(event.currentTarget.performance.navigation.type == 1) {  
-            alert("Browser refresh button is clicked...");
-        }
-        
-        if(event.currentTarget.performance.navigation.type == 2) {  
-            alert("Browser back button is clicked...");  
-        }  
-    }
-} 
-
 // ===== funcitons for rendering content to DOM =====
 
 // function to render navbar at top of page
@@ -128,6 +110,16 @@ function renderProject (project) {
         container.appendChild(githubLink)
     }
 
+    let homeLink1 = document.createElement("a")
+    homeLink1.setAttribute("class", "link")
+    homeLink1.innerHTML = "Home"
+    homeLink1.addEventListener('click', function (event) {
+        event.preventDefault();
+        
+        renderHome(SITE_DATA);
+    });
+    container.appendChild(homeLink1)
+
     // loop through images in json and add to page
     for (let imageName of project.otherImages) {
         let newImage = document.createElement("img")
@@ -142,6 +134,16 @@ function renderProject (project) {
             container.appendChild(imageCaption)
         }
     }
+
+    let homeLink2 = document.createElement("a")
+    homeLink2.setAttribute("class", "link")
+    homeLink2.innerHTML = "Home"
+    homeLink2.addEventListener('click', function (event) {
+        event.preventDefault();
+        
+        renderHome(SITE_DATA);
+    });
+    container.appendChild(homeLink2)
 }
 
 function renderAbout (SITE_DATA) {
