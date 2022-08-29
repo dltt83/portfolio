@@ -1,7 +1,9 @@
 // function fro handling page on load
 window.addEventListener('load', async function (event) {
-    const url = "jl-software.herokuapp.com"
-    let response = await fetch(`https://${url}/siteData`);
+    // const url = "https://jl-software.herokuapp.com"
+    const url = "http://127.0.0.1:8090"
+    
+    let response = await fetch(`${url}/siteData`);
     globalThis.SITE_DATA = await response.json();
 
     // render page content for home page
